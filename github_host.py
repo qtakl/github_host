@@ -73,6 +73,7 @@ def main():
         if os.path.exists(log_file_name):
             os.remove(log_file_name)
         try:
+            os.system('ipconfig/flushdns')
             webbrowser.register('edge',None,webbrowser.BackgroundBrowser(edge_path))
             webbrowser.get('edge').open('github.com')
         except Exception:

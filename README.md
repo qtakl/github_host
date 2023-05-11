@@ -1,7 +1,7 @@
 # github_host
 
 ## 一、介绍
-  — 通过修改hosts文件解决github访问问题。
+  - 通过修改hosts文件解决github访问问题。
   — 用python写的小程序，如果不想自己生成直接把exe文件下载放桌面好了。
   — 仅是windows版本，其他系统没有搞哦，因为主要是写来自己用的。
   

@@ -1,0 +1,2 @@
+# github_host
+通过修改hosts解决github访问问题。双击exe刷新github相关hosts，然后跳转edge打开github。

@@ -2,6 +2,7 @@
 <p align="center">
   <img src="https://github.com/qtakl/github_host/blob/main/use.gif"/>
 </p>
+
 ## 一、介绍
   - 通过修改hosts文件解决github访问问题。
   - 用python写的小程序，如果不想自己生成直接把exe文件下载放桌面好了。

@@ -1,4 +1,7 @@
 # github_host
+<p align="center">
+  <img src="https://github.com/qtakl/github_host/blob/main/use.gif"/>
+</p>
 
 ## 一、介绍
   - 通过修改hosts文件解决github访问问题。

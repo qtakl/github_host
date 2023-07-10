@@ -7,22 +7,24 @@ import json
 hosts_path = 'C:\\Windows\\System32\\drivers\\etc\\hosts'
 edge_path = "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe"
 log_file_name = 'github_host_log.txt'
-websites = ['github.com','github.global.ssl.fastly.net']
+websites = ['github.com']
 
-def search_ip(website):
+def ping_ip(website):
     headers = {}
-    res = requests.get('https://ip.tool.chinaz.com/' + website, headers = headers)
-    ip = re.findall('''AiWenIpData\('([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3})''', res.text)
+    res = requests.get('https://sites.ipaddress.com/' + website, headers = headers)
+    ip = re.findall('<strong>([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3})<\/strong>', res.text)
     if not ip:
         raise Exception("ip查询异常")
     return ip[0]
 
 def get_ips():
-    ips = github520()
-    if ips:
-        return ips;
+    ips = []
+    # 提供的ip经常用不了
+    # ips = github520()
+    # if ips:
+    #     return ips;
     for website in websites:
-        ip_address = search_ip(website)
+        ip_address = ping_ip(website)
         ips.append(ip_address)
     return ips;
 
@@ -73,7 +75,7 @@ def main():
         if os.path.exists(log_file_name):
             os.remove(log_file_name)
         try:
-            os.popen('ipconfig/flushdns')
+            os.popen('ipconfig /flushdns')
             webbrowser.register('edge',None,webbrowser.BackgroundBrowser(edge_path))
             webbrowser.get('edge').open('github.com')
         except Exception:
